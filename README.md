@@ -1,27 +1,22 @@
 # TPExpenseTracking
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Pour lancer le projet, récupérer le repo git, puis au niveau du chemin du dossier faites les commendes :
+`npm install`
+`ng serve`
 
-## Development server
+Aller ensuite à `http://localhost:4200/` pour utiliser l'app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Fonctionnalités
 
-## Code scaffolding
+L'application permet d'accéder à une liste de dépenses classées par ordre chronologique inverse de dates.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Une estimation du total qui sera dépensé lors du mois en cours est proposé au-dessus, calculé en multipliant le total déjà dépensé par le rapport du nombre de jours du mois sur le nombre de jours écoulé.
 
-## Build
+L'utilisateur peut aussi ajouter une nouvelle dépense en cliquant sur le bouton dédié. Seuls les 4 premiers champs sont obligatoires, les autres sont facultatifs. Le champ intitulé ne peut pas contenir de "'". En validantn, une snackbar apparait pour informer l'utilisteur de la réussite ou non, de l'opération. Les données sont instantannément mises à jour.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+En outre, un deuxième onglet permet d'accéder à la répartition des dépenses par catégorie sous forme de graphique en barre.
+(Pour ce graphique, j'ai utilisé chart.js avec ng2-chart, pour que ce soit cohérent avec l'infrastructure d'angular)
 
-## Running unit tests
+## Autres
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Le code des fonctions back est disponible [ici](https://github.com/ErwanQui/TPExpenseTrackingServer)
