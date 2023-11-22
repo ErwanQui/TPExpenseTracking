@@ -1,0 +1,115 @@
+<div class="dialogView">
+  <div class="title">
+    <span>Ajouter une dépense</span>
+  </div>
+  <form [formGroup]="newExpenseForm">
+    <mat-grid-list cols="4" rowHeight="70px">
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Prix</mat-label>
+          <input matInput
+            type="number"
+            min="0"
+            placeholder="Entrer un prix"
+            formControlName="value"
+            (change)="onUpdate('value', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Intitulé</mat-label>
+          <input matInput
+            placeholder="Entrer un intitulé"
+            formControlName="name"
+            (change)="onUpdate('name', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Catégorie</mat-label>
+          <mat-select formControlName="category" (selectionChange)="onUpdate('category', $event)">
+            <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Date</mat-label>
+            <input matInput
+              formControlName="date"
+              (dateChange)="onUpdate('date', $event.target)"
+              [matDatepicker]="picker"
+              readonly>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Numéro de rue</mat-label>
+          <input matInput
+            type="number"
+            min="0"
+            placeholder="Entrer un numéro du rue"
+            formControlName="place_number"
+            (change)="onUpdate('place_number', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Adresse</mat-label>
+          <input matInput
+            placeholder="Entrer une adresse"
+            formControlName="place_address"
+            (change)="onUpdate('place_address', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Code postal</mat-label>
+          <input matInput
+            placeholder="Entrer un code postal"
+            formControlName="place_postal_code"
+            (change)="onUpdate('place_postal_code', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan=1>
+        <mat-form-field class="detailsField" appearance="outline">
+          <mat-label>Ville</mat-label>
+          <input matInput
+            placeholder="Entrer une ville"
+            formControlName="city"
+            (change)="onUpdate('city', $event.target)"
+            />
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </form>
+  
+  <div class="buttonsContainer">
+    <button
+      mat-button
+      class="actionButton"
+      (click)="validate(false)">
+      <span>
+        Annuler
+      </span>
+    </button>
+    <button
+      mat-button
+      class="actionButton"
+      (click)="validate(true)">
+      <span>
+        Valider
+      </span>
+    </button>
+  </div>
+</div>

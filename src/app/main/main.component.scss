@@ -1,0 +1,47 @@
+.main {
+  background-color: #d0f5fb;;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+
+  .mainAction {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    span {
+      font-weight: bold;
+    }
+
+    .newExpenseButton {
+      background-color: #0b0784;
+      margin: 10px;
+      width: 25%;
+    
+      span {
+        color: white;
+        font-weight: bold;
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+
+  .container {
+    padding: 5px;
+    padding-top: 10px;
+    height: 600px;
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+    
+      overflow: auto;
+      scrollbar-width: none;
+
+      th {
+        font-weight: bold;
+      }
+    }
+  }
+}

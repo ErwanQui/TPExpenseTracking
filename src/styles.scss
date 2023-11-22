@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/theme.scss";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  // To remove the default background-color of snackbar
+  .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+    background: transparent;
+  }
+
+  .successSnackBar {
+    background-color: #99ebb1;
+    justify-content: center;
+  }
+
+  .failSnackBar {
+    background-color: #be412d;
+    justify-content: center;
+  }
+}
