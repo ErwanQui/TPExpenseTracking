@@ -1,8 +1,7 @@
 # TPExpenseTracking
 
-Pour lancer le projet, récupérer le repo git, puis au niveau du chemin du dossier faites les commendes :
-`npm install`
-`ng serve`
+Pour lancer le projet, récupérer le repo git, puis au niveau du chemin du dossier faites les commandes :
+`npm install`, puis `ng serve`
 
 Aller ensuite à `http://localhost:4200/` pour utiliser l'app
 
